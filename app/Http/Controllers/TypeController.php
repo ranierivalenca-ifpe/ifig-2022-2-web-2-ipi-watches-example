@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Watch;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class WatchController extends Controller
+class TypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +26,7 @@ class WatchController extends Controller
     public function create()
     {
         //
-        return view('add-watch');
+        return view('add-type');
     }
 
     /**
@@ -39,9 +39,8 @@ class WatchController extends Controller
     {
         //
         $user = Auth::user();
-        Watch::create([
-            'size' => $request->size,
-            'type_id' => $request->type,
+        Type::create([
+            'type' => $request->type,
             'user_id' => $user->id
         ]);
 
@@ -51,10 +50,10 @@ class WatchController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Watch  $watch
+     * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function show(Watch $watch)
+    public function show(Type $type)
     {
         //
     }
@@ -62,10 +61,10 @@ class WatchController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Watch  $watch
+     * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function edit(Watch $watch)
+    public function edit(Type $type)
     {
         //
     }
@@ -74,10 +73,10 @@ class WatchController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Watch  $watch
+     * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Watch $watch)
+    public function update(Request $request, Type $type)
     {
         //
     }
@@ -85,10 +84,10 @@ class WatchController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Watch  $watch
+     * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Watch $watch)
+    public function destroy(Type $type)
     {
         //
     }

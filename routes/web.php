@@ -26,4 +26,7 @@ Route::get('/dashboard', function () {
 Route::get('/add-watch', [WatchController::class, 'create']);
 Route::post('/add-watch', [WatchController::class, 'store']);
 
+Route::get('/add-type', [TypeController::class, 'create']);
+Route::post('/add-type', [TypeController::class, 'store']);
+
 require __DIR__.'/auth.php';

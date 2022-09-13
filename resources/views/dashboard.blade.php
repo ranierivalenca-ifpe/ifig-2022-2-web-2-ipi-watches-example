@@ -19,6 +19,15 @@
                     <div class="border border-black">
                         <a href="/add-watch">Adicionar</a>
                     </div>
+                    <h1 class="text-lg mt-4">Here your types</h1>
+                    @foreach (\App\Models\Type::all() as $type)
+                        <div class="border border-black">
+                            {{$type}}
+                        </div>
+                    @endforeach
+                    <div class="border border-black">
+                        <a href="/add-type">Adicionar</a>
+                    </div>
                 </div>
             </div>
         </div>
