@@ -10,6 +10,15 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in!
+                    <h1 class="text-lg">Here your watches</h1>
+                    @foreach (Auth::user()->watches as $watch)
+                        <div class="border border-black">
+                            {{$watch}}
+                        </div>
+                    @endforeach
+                    <div class="border border-black">
+                        <a href="/add-watch">Adicionar</a>
+                    </div>
                 </div>
             </div>
         </div>

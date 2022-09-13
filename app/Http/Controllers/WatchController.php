@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Watch;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WatchController extends Controller
 {
@@ -25,6 +26,7 @@ class WatchController extends Controller
     public function create()
     {
         //
+        return view('add-watch');
     }
 
     /**
@@ -36,6 +38,14 @@ class WatchController extends Controller
     public function store(Request $request)
     {
         //
+        $user = Auth::user();
+        Watch::create([
+            'size' => $request->size,
+            'type' => $request->type,
+            'user_id' => $user->id
+        ]);
+
+        return redirect('/dashboard');
     }
 
     /**
